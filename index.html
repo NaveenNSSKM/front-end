@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Dashboard | CMS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="A premium post management system with real-time updates.">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Post Dashboard</h1>
+            <p class="subtitle">Create and manage your content seamlessly</p>
+        </header>
+
+        <section class="form-section glass">
+            <h2>New Post</h2>
+            <form id="postForm">
+                <div class="input-group">
+                    <input type="text" id="user" placeholder=" " required>
+                    <label for="user">User Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="title" placeholder=" " required>
+                    <label for="title">Title</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="description" placeholder=" ">
+                    <label for="description">Short Description</label>
+                </div>
+                <div class="input-group">
+                    <textarea id="content" placeholder=" " required></textarea>
+                    <label for="content">Content</label>
+                </div>
+                <button type="submit" id="submitBtn">
+                    <span>Publish Post</span>
+                    <div class="loader" id="loader"></div>
+                </button>
+            </form>
+        </section>
+
+        <section class="display-section">
+            <div class="section-header">
+                <h2>Recent Posts</h2>
+                <div class="badge" id="postCount">0 Posts</div>
+            </div>
+            <div id="postsContainer" class="posts-grid">
+                <!-- Posts will be injected here -->
+                <div class="empty-state">
+                    <p>No posts yet. Start by creating one!</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
