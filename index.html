@@ -20,10 +20,7 @@
         <section class="form-section glass">
             <h2>New Post</h2>
             <form id="postForm">
-                <div class="input-group">
-                    <input type="text" id="user" placeholder=" " required>
-                    <label for="user">User Name</label>
-                </div>
+                
                 <div class="input-group">
                     <input type="text" id="title" placeholder=" " required>
                     <label for="title">Title</label>
@@ -31,6 +28,18 @@
                 <div class="input-group">
                     <input type="text" id="description" placeholder=" ">
                     <label for="description">Short Description</label>
+                </div>
+                <div class="input-group">
+                    <input type="url" id="imageUrl" placeholder=" ">
+                    <label for="imageUrl">Image URL</label>
+                </div>
+                <div class="input-group">
+                    <select id="status" required>
+                        <option value="draft">Draft</option>
+                        <option value="published">Published</option>
+                        <option value="archived">Archived</option>
+                    </select>
+                    <label for="status">Status</label>
                 </div>
                 <div class="input-group">
                     <textarea id="content" placeholder=" " required></textarea>

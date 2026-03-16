@@ -16,9 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         
         const postData = {
-            user: document.getElementById('user').value,
+          
             title: document.getElementById('title').value,
             description: document.getElementById('description').value,
+            imageUrl: document.getElementById('imageUrl').value,
+            status: document.getElementById('status').value,
             content: document.getElementById('content').value
         };
 
@@ -77,11 +79,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         postsContainer.innerHTML = posts.map(post => `
             <div class="post-card glass">
-                <div class="post-user">By ${escapeHtml(post.user)}</div>
-                <h3>${escapeHtml(post.title)}</h3>
-                <p class="post-desc">${escapeHtml(post.description || '')}</p>
-                <div class="post-content">
-                    ${escapeHtml(post.content).replace(/\n/g, '<br>')}
+                ${post.imageUrl ? `<img src="${escapeHtml(post.imageUrl)}" alt="${escapeHtml(post.title)}" class="post-image" onerror="this.src='https://placehold.co/600x400/1e293b/f8fafc?text=No+Image'">` : ''}
+                <div class="post-body">
+                    <div class="post-meta">
+                        <div class="post-user">By ${escapeHtml(post.user)}</div>
+                        <div class="status-tag status-${post.status || 'published'}">${escapeHtml(post.status || 'published')}</div>
+                    </div>
+                    <h3>${escapeHtml(post.title)}</h3>
+                    <p class="post-desc">${escapeHtml(post.description || '')}</p>
+                    <div class="post-content">
+                        ${escapeHtml(post.content).replace(/\n/g, '<br>')}
+                    </div>
                 </div>
             </div>
         `).join('');
