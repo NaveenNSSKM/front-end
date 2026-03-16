@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('loader');
 
     // Since we are not using Vite, we use a relative path
-    const API_URL = '/api/posts';
+    const API_URL = 'https://backend-project-barq.onrender.com/api/posts';
 
     // Fetch and display posts on load
     fetchPosts();
